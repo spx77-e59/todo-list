@@ -1,4 +1,4 @@
-import Todo from "./Todo.js";
+import Todo from "../classes/Todo.js";
 
 export default function (form) {
   const todo = new Todo(
