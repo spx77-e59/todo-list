@@ -7,7 +7,11 @@ export default function () {
   titleInput.type = "text";
   titleInput.placeholder = "Project Title";
 
-  projectForm.append(titleInput);
+  const submitButton = document.createElement("button");
+  submitButton.id = "projectSubmitButton";
+  submitButton.textContent = "Create";
+
+  projectForm.append(titleInput, submitButton);
 
   return projectForm;
 }
