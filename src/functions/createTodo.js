@@ -1,13 +1,14 @@
 import Todo from "../classes/Todo.js";
 
-export default function (form) {
+export default function (formData) {
   const todo = new Todo(
-    form.title,
-    form.description,
-    from.dueDate,
-    form.priority,
-    form.notes,
-    form.checked
+    formData.id,
+    formData.title,
+    formData.description,
+    formData.dueDate,
+    formData.priority,
+    formData.notes,
+    formData.checked
   );
   return todo;
 }
