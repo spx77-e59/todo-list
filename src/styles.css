@@ -23,6 +23,8 @@ body {
 
 #content {
   flex: 1;
+  border: 1px solid black;
+  padding: 50px;
 }
 
 /* forms */
@@ -37,7 +39,8 @@ body {
   gap: 10px;
 }
 
-#todoForm input, #todoForm textarea {
+#todoForm input,
+#todoForm textarea {
   width: 200px;
 }
 
@@ -47,8 +50,29 @@ body {
   align-items: center;
 }
 
+/* home data */
+#projectsDiv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
 
+.projectDiv {
+  width: clamp(200px, 400px, 600px);
+  border: 1px solid black;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
+.todoDiv {
+  display: flex;
+  border: 1px solid black;
+  align-items: center;
+}
 
 
 

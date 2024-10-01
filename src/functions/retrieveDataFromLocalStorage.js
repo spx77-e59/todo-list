@@ -1,3 +1,5 @@
 export default function () {
-  return localStorage.getItem("Storage");
+  const data = localStorage.getItem("Storage");
+  const storage = JSON.parse(data);
+  return storage.Projects;
 }
