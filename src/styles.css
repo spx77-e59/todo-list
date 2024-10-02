@@ -100,13 +100,12 @@ nav button {
 }
 
 .homeProjectHeaderDiv {
-  display: grid;
-  grid-template-columns: 1fr 90px 70px;
-  gap: 10px;
-  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  gap: 50px;
 }
 .homeProjectHeaderDiv h1 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .homeProjectHeaderDiv button {
@@ -116,10 +115,59 @@ nav button {
 .newTodoButtton {
 }
 
+.homeTodoListDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+}
+
 .homeTodoDiv {
   display: flex;
   border: 1px solid black;
   align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.homeTodoDiv button {
+  padding: 4px 8px;
+  text-wrap: nowrap;
+}
+
+.homeTodoDiv h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.homeTodoDiv input[type = "checkbox"] {
+  appearance: none;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.4);
+  background-color: rgb(230, 230, 230);
+  transition: background-color 0.15s ease;
+}
+.homeTodoDiv input[type = "checkbox"]:hover {
+  background-color: rgb(220, 220, 220);
+}
+
+.homeTodoDiv input[type = "checkbox"]:checked::before {
+  text-align: center;
+  appearance: auto;
+  content: "\2713";
+  font-weight: 900;
+  font-size: 1.4rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 3px;
+  color: white;
+  position: relative;
+  background-color: green;
 }
 
 /* projects */
@@ -136,10 +184,11 @@ nav button {
   border: none;
   border-radius: 5px;
   box-shadow: 1px 1px 2px gray;
+  align-self: flex-end;
 }
 
 .closeProjectFormButton {
-  align-self: flex-end;
+  padding: 6px 10px;
 }
 
 #projectListDiv {

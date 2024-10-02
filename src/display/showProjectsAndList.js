@@ -6,7 +6,7 @@ export default function () {
   const projectsDiv = document.createElement("div");
   projectsDiv.id = "homeProjectsDiv";
   const projects = retrieveDataFromLocalStorage();
- 
+
   projects.forEach((project) => {
     const projectTitleText = document.createElement("h1");
     projectTitleText.textContent = project.title;
@@ -66,18 +66,9 @@ export default function () {
       const viewDetailButton = document.createElement("button");
       viewDetailButton.textContent = "View Detail";
 
-      const deleteButton = document.createElement("button");
-      deleteButton.textContent = "Delete";
-
       const todoDiv = document.createElement("div");
       todoDiv.classList.add("homeTodoDiv");
-      todoDiv.append(
-        titleText,
-        dueDateText,
-        checkedInput,
-        viewDetailButton,
-        deleteButton
-      );
+      todoDiv.append(titleText, dueDateText, checkedInput, viewDetailButton);
       todoListDiv.append(todoDiv);
     });
     projectsDiv.append(projectDiv);
