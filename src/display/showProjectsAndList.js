@@ -1,5 +1,6 @@
 import retrieveDataFromLocalStorage from "../functions/retrieveDataFromLocalStorage";
 import newTodoForm from "../forms/newTodoForm";
+import showTodo from "./showTodo";
 
 export default function () {
   const contentDiv = document.querySelector("#content");
@@ -65,6 +66,9 @@ export default function () {
 
       const viewDetailButton = document.createElement("button");
       viewDetailButton.textContent = "View Detail";
+      viewDetailButton.addEventListener("click", () => {
+        showTodo(project, todo);
+      });
 
       const todoDiv = document.createElement("div");
       todoDiv.classList.add("homeTodoDiv");

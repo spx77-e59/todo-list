@@ -19,6 +19,10 @@ body {
   align-items: center;
 }
 
+button {
+  cursor: pointer;
+}
+
 /* header */
 header {
   display: flex;
@@ -142,7 +146,8 @@ nav button {
   font-weight: 500;
 }
 
-.homeTodoDiv input[type = "checkbox"] {
+.homeTodoDiv input[type="checkbox"],
+.unchecked {
   appearance: none;
   height: 1.5rem;
   width: 1.5rem;
@@ -152,11 +157,12 @@ nav button {
   background-color: rgb(230, 230, 230);
   transition: background-color 0.15s ease;
 }
-.homeTodoDiv input[type = "checkbox"]:hover {
+.homeTodoDiv input[type="checkbox"]:hover {
   background-color: rgb(220, 220, 220);
 }
 
-.homeTodoDiv input[type = "checkbox"]:checked::before {
+.homeTodoDiv input[type="checkbox"]:checked::before,
+.checked {
   text-align: center;
   appearance: auto;
   content: "\2713";
@@ -168,6 +174,11 @@ nav button {
   color: white;
   position: relative;
   background-color: green;
+}
+
+.checked,
+.unchecked {
+  cursor: default;
 }
 
 /* projects */
@@ -235,4 +246,66 @@ nav button {
   border-radius: 5px;
   border: none;
   box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.5);
+}
+
+/* todoDetail */
+.todoDetailDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.backToHomeButton {
+  align-self: flex-end;
+}
+
+.backToHomeButton,
+.editTodoButton,
+.deleteTodoButton {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.5);
+}
+
+.todoButtonContainerDiv {
+  display: flex;
+  gap: 10px;
+}
+
+.viewTodoDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.5);
+  min-width: 500px;
+}
+
+.viewTodoDiv:last-child {
+  align-items: flex-end;
+}
+
+.todoContainerDiv {
+  box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.2);
+  padding: 5px;
+  width: 100%;
+  padding: 20px;
+}
+
+.todoContainerDiv h2 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: left;
+  text-decoration: underline;
+}
+
+.todoContainerDiv h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
 }
