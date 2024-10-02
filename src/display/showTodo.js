@@ -1,6 +1,11 @@
 import retrieveDataFromLocalStorage from "../functions/retrieveDataFromLocalStorage";
 import showProjectsAndList from "./showProjectsAndList";
-export default function (Project, Todo) {
+import deleteTodoFromProject from "../functions/deleteTodoFromProject.js";
+import updateProjectTodos from "../functions/updateProjectTodos.js";
+import saveToLocalStorage from "../functions/saveToLocalStorage.js";
+import Storage from "../classes/Storage.js";
+
+export default function showTodo(Project, Todo) {
   const contentDiv = document.querySelector("#content");
   contentDiv.innerHTML = "";
   const projects = retrieveDataFromLocalStorage();
@@ -76,7 +81,12 @@ export default function (Project, Todo) {
   const deleteTodoButton = document.createElement("button");
   deleteTodoButton.classList.add("deleteTodoButton");
   deleteTodoButton.textContent = "Delete";
-  deleteTodoButton.addEventListener("click", () => {});
+  deleteTodoButton.addEventListener("click", () => {
+    deleteTodoFromProject(todoProject, todo);
+    updateProjectTodos(Storage, todoProject);
+    saveToLocalStorage(Storage);
+    showProjectsAndList();
+  });
 
   containerDiv6.append(editTodoButton, deleteTodoButton);
 
