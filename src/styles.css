@@ -82,7 +82,7 @@ nav button {
 }
 
 /* home data */
-#projectsDiv {
+#homeProjectsDiv {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -90,7 +90,7 @@ nav button {
   justify-content: center;
 }
 
-.projectDiv {
+.homeProjectDiv {
   width: clamp(200px, 400px, 600px);
   border: 1px solid black;
   padding: 16px;
@@ -99,25 +99,91 @@ nav button {
   gap: 10px;
 }
 
-.projectHeaderDiv {
+.homeProjectHeaderDiv {
   display: grid;
   grid-template-columns: 1fr 90px 70px;
   gap: 10px;
   align-items: center;
 }
-.projectHeaderDiv h1 {
+.homeProjectHeaderDiv h1 {
   font-size: 1.2rem;
 }
 
-.projectHeaderDiv button {
+.homeProjectHeaderDiv button {
   padding: 4px 8px;
 }
 
 .newTodoButtton {
 }
 
-.todoDiv {
+.homeTodoDiv {
   display: flex;
   border: 1px solid black;
   align-items: center;
+}
+
+/* projects */
+#projectsDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.newProjectButton,
+.closeProjectFormButton {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px gray;
+}
+
+.closeProjectFormButton {
+  align-self: flex-end;
+}
+
+#projectListDiv {
+  display: flex;
+  gap: 20px;
+}
+
+.projectDiv {
+  border: 1px solid black;
+  padding: 10px 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.projectDiv h1 {
+  font-size: 1.2rem;
+  text-wrap: nowrap;
+}
+
+.projectDiv button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.5);
+  text-wrap: nowrap;
+}
+
+/* project form */
+
+#projectForm {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+#projectForm input {
+  padding: 5px;
+}
+
+#projectForm button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.5);
 }
