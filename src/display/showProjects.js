@@ -1,7 +1,10 @@
 import retrieveDataFromLocalStorage from "../functions/retrieveDataFromLocalStorage";
 import newProjectForm from "../forms/newProjectForm.js";
+import deleteProject from "../functions/deleteProject.js";
+import Storage from "../classes/Storage.js";
+import saveToLocalStorage from "../functions/saveToLocalStorage.js";
 
-export default function () {
+export default function showProjects() {
   const contentDiv = document.querySelector("#content");
   contentDiv.innerHTML = "";
 
@@ -46,6 +49,11 @@ export default function () {
     const deleteProjectButton = document.createElement("button");
     deleteProjectButton.classList.add("deleteProjectButton");
     deleteProjectButton.textContent = "Delete";
+    deleteProjectButton.addEventListener("click", () => {
+      deleteProject(Storage, project);
+      saveToLocalStorage(Storage);
+      showProjects();
+    });
 
     const editTitleProjectButton = document.createElement("button");
     editTitleProjectButton.classList.add("editProjectTitleButton");
@@ -59,7 +67,7 @@ export default function () {
       deleteProjectButton
     );
 
-    projectListDiv.append(projectDiv);
+    project.title !== "" && projectListDiv.append(projectDiv);
   });
   contentDiv.append(projectsDiv);
 }

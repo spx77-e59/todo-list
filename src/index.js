@@ -10,7 +10,7 @@ const homeBtn = document.querySelector("#home-btn");
 
 const projectsBtn = document.querySelector("#projects-btn");
 
-const defaultProject = new Project(generateUniqueID(), "default project", []);
+const defaultProject = new Project(generateUniqueID(), "", []);
 
 Storage.Projects.push(defaultProject);
 saveToLocalStorage(Storage);

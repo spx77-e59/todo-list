@@ -1,3 +1,3 @@
 export default function (Storage, Project) {
-  Storage.Projects.unshift(Project);
+  Storage.Projects.splice(1, 0, Project);
 }
