@@ -43,12 +43,11 @@ nav {
 }
 
 nav button {
- padding: 6px 12px;
- border: none;
- border-radius: 5px;
- box-shadow: 1px 1px 2px gray;
- font-weight: 600;
-
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px gray;
+  font-weight: 600;
 }
 
 /* content-div */
@@ -98,6 +97,23 @@ nav button {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.projectHeaderDiv {
+  display: grid;
+  grid-template-columns: 1fr 90px 70px;
+  gap: 10px;
+  align-items: center;
+}
+.projectHeaderDiv h1 {
+  font-size: 1.2rem;
+}
+
+.projectHeaderDiv button {
+  padding: 4px 8px;
+}
+
+.newTodoButtton {
 }
 
 .todoDiv {
