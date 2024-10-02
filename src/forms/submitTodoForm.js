@@ -1,7 +1,7 @@
 import createTodo from "../functions/createTodo.js";
 import addTodoToProject from "../functions/addTodoToProject.js";
 import saveToLocalStorage from "../functions/saveToLocalStorage.js";
-import updateProjectTodos from "../functions/updateProjectTodos.js";
+import updateProject from "../functions/updateProject.js";
 import generateUniqueID from "../functions/generateUniqueID.js";
 
 export default function (event, form, project, storage) {
@@ -19,7 +19,7 @@ export default function (event, form, project, storage) {
   console.log("todo:", todo);
   addTodoToProject(project, todo);
   console.log("project after:", project.todos);
-  updateProjectTodos(storage, project);
+  updateProject(storage, project);
   saveToLocalStorage(storage);
   console.log("submit", storage);
 }

@@ -1,7 +1,7 @@
 import retrieveDataFromLocalStorage from "../functions/retrieveDataFromLocalStorage";
 import showProjectsAndList from "./showProjectsAndList";
 import deleteTodoFromProject from "../functions/deleteTodoFromProject.js";
-import updateProjectTodos from "../functions/updateProjectTodos.js";
+import updateProject from "../functions/updateProject.js";
 import saveToLocalStorage from "../functions/saveToLocalStorage.js";
 import Storage from "../classes/Storage.js";
 
@@ -83,7 +83,7 @@ export default function showTodo(Project, Todo) {
   deleteTodoButton.textContent = "Delete";
   deleteTodoButton.addEventListener("click", () => {
     deleteTodoFromProject(todoProject, todo);
-    updateProjectTodos(Storage, todoProject);
+    updateProject(Storage, todoProject);
     saveToLocalStorage(Storage);
     showProjectsAndList();
   });
