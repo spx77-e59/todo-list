@@ -13,13 +13,10 @@ export default function (event, form, project, storage) {
     dueDate: form.dueDateInput.value,
     priority: form.priorityInput.value,
     notes: form.notesInput.value,
-    checked: form.checkedInput.checked,
+    checked: false,
   };
   const todo = createTodo(formData);
-  console.log("todo:", todo);
   addTodoToProject(project, todo);
-  console.log("project after:", project.todos);
   updateProject(storage, project);
   saveToLocalStorage(storage);
-  console.log("submit", storage);
 }

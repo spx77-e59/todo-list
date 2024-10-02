@@ -4,6 +4,7 @@ import deleteTodoFromProject from "../functions/deleteTodoFromProject.js";
 import updateProject from "../functions/updateProject.js";
 import saveToLocalStorage from "../functions/saveToLocalStorage.js";
 import Storage from "../classes/Storage.js";
+import editTodoForm from "../forms/editTodoForm.js";
 
 export default function showTodo(Project, Todo) {
   const contentDiv = document.querySelector("#content");
@@ -73,10 +74,29 @@ export default function showTodo(Project, Todo) {
   const containerDiv6 = document.createElement("div");
   containerDiv6.classList.add("todoButtonContainerDiv");
 
+  const todoForm = editTodoForm(todoProject, todo);
+
   const editTodoButton = document.createElement("button");
   editTodoButton.classList.add("editTodoButton");
   editTodoButton.textContent = "Edit";
-  editTodoButton.addEventListener("click", () => {});
+  editTodoButton.addEventListener("click", () => {
+    todoForm.style.display = "";
+    containerDiv.style.display = "none";
+    viewTodoDiv.prepend(todoForm);
+    editTodoButton.style.display = "none";
+    cancelEditTodoButton.style.display = "";
+  });
+
+  const cancelEditTodoButton = document.createElement("button");
+  cancelEditTodoButton.classList.add("cancelEditTodoButton");
+  cancelEditTodoButton.textContent = "X";
+  cancelEditTodoButton.style.display = "none";
+  cancelEditTodoButton.addEventListener("click", () => {
+    editTodoButton.style.display = "";
+    cancelEditTodoButton.style.display = "none";
+    todoForm.style.display = "none";
+    containerDiv.style.display = "";
+  });
 
   const deleteTodoButton = document.createElement("button");
   deleteTodoButton.classList.add("deleteTodoButton");
@@ -88,17 +108,21 @@ export default function showTodo(Project, Todo) {
     showProjectsAndList();
   });
 
-  containerDiv6.append(editTodoButton, deleteTodoButton);
+  const containerDiv = document.createElement("div");
+  containerDiv.classList.add("containerDiv");
 
-  viewTodoDiv.append(
+  containerDiv.append(
     containerDiv1,
     containerDiv2,
     containerDiv3,
     containerDiv4,
     containerDiv5,
-    checkedDiv,
-    containerDiv6
+    checkedDiv
   );
+
+  containerDiv6.append(cancelEditTodoButton, editTodoButton, deleteTodoButton);
+
+  viewTodoDiv.append(containerDiv, containerDiv6);
 
   todoDetailDiv.append(backToHomeButton, viewTodoDiv);
   contentDiv.append(todoDetailDiv);
