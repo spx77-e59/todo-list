@@ -30,5 +30,5 @@ newProjectBtn.addEventListener("click", () => {
 
 homeBtn.addEventListener("click", () => {
   contentDiv.innerHTML = "";
-  contentDiv.append(showProjectsAndList());
+  showProjectsAndList();
 });
