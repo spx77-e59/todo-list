@@ -214,7 +214,6 @@ nav button:hover {
 .homeProjectHeaderDiv button {
   padding: 10px 20px;
   color: white;
-  background-color: #5ab2ff;
   font-size: 1.2rem;
   border: none;
   box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.8);
@@ -441,7 +440,7 @@ nav button:hover {
   justify-content: flex-end;
   padding: 20px;
   border-radius: 5px;
-  background-color:  #f0eaac;
+  background-color: #f0eaac;
   box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.2);
 }
 
@@ -476,20 +475,49 @@ nav button:hover {
 .todoDetailDiv {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-}
-
-.backToHomeButton {
-  align-self: flex-end;
+  gap: 50px;
 }
 
 .backToHomeButton,
+.cancelEditTodoButton {
+  align-self: flex-end;
+  border-radius: 12px;
+  background-color: gray;
+}
+
+.backToHomeButton:hover,
+.cancelEditTodoButton {
+  background-color: rgba(128, 128, 128, 0.9);
+}
+
+.cancelEditTodoButton,
+.backToHomeButton,
 .editTodoButton,
 .deleteTodoButton {
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 10px 20px;
+  color: white;
+  font-size: 1.2rem;
   border: none;
-  box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.5);
+  box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.8);
+  transition: background-color 0.15s ease;
+}
+
+.editTodoButton {
+  border-radius: 8px;
+  background-color: #ed9455;
+}
+
+.editTodoButton:hover {
+  background-color: #ed9455d0;
+}
+
+.deleteTodoButton {
+  border-radius: 8px;
+  background-color: #55679c;
+}
+
+.deleteTodoButton:hover {
+  background-color: #55679cd7;
 }
 
 .todoButtonContainerDiv {
