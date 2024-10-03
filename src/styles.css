@@ -226,6 +226,14 @@ nav button {
   cursor: default;
 }
 
+.complete {
+  background-color: rgb(175, 94, 94);
+}
+
+.complete h2, .complete p {
+  text-decoration: line-through;
+}
+
 /* projects */
 #projectsDiv {
   display: flex;

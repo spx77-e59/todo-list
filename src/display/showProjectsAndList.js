@@ -1,8 +1,13 @@
 import retrieveDataFromLocalStorage from "../functions/retrieveDataFromLocalStorage";
 import newTodoForm from "../forms/newTodoForm";
 import showTodo from "./showTodo";
+import Storage from "../classes/Storage";
+import saveToLocalStorage from "../functions/saveToLocalStorage";
+import updateProject from "../functions/updateProject";
+import updateTodoChecked from "../functions/updateTodoChecked";
+import updateTodoUnchecked from "../functions/updateTodoUnchecked";
 
-export default function () {
+export default function showProjectsAndList() {
   const contentDiv = document.querySelector("#content");
   const projectsDiv = document.createElement("div");
   projectsDiv.id = "homeProjectsDiv";
@@ -62,7 +67,23 @@ export default function () {
 
       const checkedInput = document.createElement("input");
       checkedInput.type = "checkbox";
-      checkedInput.checked = false;
+      checkedInput.checked = todo.checked;
+
+      checkedInput.addEventListener("change", () => {
+        if (checkedInput.checked) {
+          todo.checked = true;
+          todoDiv.classList.add("complete");
+          updateTodoChecked(project, todo);
+        } else {
+          todo.checked = false;
+          todoDiv.classList.remove("complete");
+          updateTodoUnchecked(project, todo);
+        }
+        console.log(todoDiv.classList);
+        updateProject(Storage, project);
+        saveToLocalStorage(Storage);
+        showProjectsAndList();
+      });
 
       const viewDetailButton = document.createElement("button");
       viewDetailButton.textContent = "View Detail";
@@ -72,6 +93,11 @@ export default function () {
 
       const todoDiv = document.createElement("div");
       todoDiv.classList.add("homeTodoDiv");
+      if (todo.checked) {
+        todoDiv.classList.add("complete");
+      } else {
+        todoDiv.classList.remove("complete");
+      }
       todoDiv.append(titleText, dueDateText, checkedInput, viewDetailButton);
       todoListDiv.append(todoDiv);
     });
