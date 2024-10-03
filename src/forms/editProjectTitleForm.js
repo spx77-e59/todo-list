@@ -18,7 +18,7 @@ export default function (project) {
   const submitButton = document.createElement("button");
   submitButton.id = "editProjectSubmitButton";
   submitButton.textContent = "Save";
-  submitButton.addEventListener("submit", (event) => {
+  submitButton.addEventListener("click", (event) => {
     event.preventDefault();
     editProjectTitle(project, titleInput.value);
     updateProject(Storage, project);
