@@ -6,6 +6,7 @@ export default function () {
   titleInput.id = "projectTitleInput";
   titleInput.type = "text";
   titleInput.placeholder = "Project Title";
+  titleInput.required = true;
 
   const submitButton = document.createElement("button");
   submitButton.id = "projectSubmitButton";

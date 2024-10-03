@@ -13,6 +13,7 @@ export default function (project, todo) {
   titleInput.id = "editTitleInput";
   titleInput.type = "text";
   titleInput.value = todo.title;
+  titleInput.required = true;
 
   const titleLabel = document.createElement("label");
   titleLabel.for = "editTitleInput";
@@ -38,6 +39,10 @@ export default function (project, todo) {
   dueDateInput.id = "editDueDateInput";
   dueDateInput.type = "date";
   dueDateInput.value = todo.dueDate;
+  
+  const today = new Date();
+  const minDate = today.toISOString().substring(0, 10);
+  dueDateInput.setAttribute("min", minDate);
 
   const dueDateLabel = document.createElement("label");
   dueDateLabel.htmlFor = "editDueDateInput";
@@ -90,7 +95,20 @@ export default function (project, todo) {
   const submitButton = document.createElement("button");
   submitButton.id = "editSubmitButton";
   submitButton.textContent = "Update";
-  submitButton.addEventListener("click", (event) => {
+
+  const editTodoDiv = document.createElement("div");
+  editTodoDiv.classList.add("editTodoContainerDiv");
+  editTodoDiv.append(
+    editTodoDiv1,
+    editTodoDiv2,
+    editTodoDiv3,
+    editTodoDiv4,
+    editTodoDiv5
+  );
+
+  todoForm.append(editTodoDiv, submitButton);
+
+  todoForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const formData = {
       title: titleInput.value,
@@ -106,18 +124,6 @@ export default function (project, todo) {
     saveToLocalStorage(Storage);
     showTodo(project, todo);
   });
-
-  const editTodoDiv = document.createElement("div");
-  editTodoDiv.classList.add("editTodoContainerDiv");
-  editTodoDiv.append(
-    editTodoDiv1,
-    editTodoDiv2,
-    editTodoDiv3,
-    editTodoDiv4,
-    editTodoDiv5
-  );
-
-  todoForm.append(editTodoDiv, submitButton);
 
   todoForm.style.display = "none";
   return todoForm;

@@ -14,11 +14,15 @@ export default function (project) {
   titleInput.id = "editProjectTitleInput";
   titleInput.type = "text";
   titleInput.value = titleText;
+  titleInput.required = true;
 
   const submitButton = document.createElement("button");
   submitButton.id = "editProjectSubmitButton";
   submitButton.textContent = "Save";
-  submitButton.addEventListener("click", (event) => {
+
+  projectForm.append(titleInput, submitButton);
+
+  projectForm.addEventListener("submit", (event) => {
     event.preventDefault();
     editProjectTitle(project, titleInput.value);
     updateProject(Storage, project);
@@ -26,7 +30,6 @@ export default function (project) {
     showProjects();
   });
 
-  projectForm.append(titleInput, submitButton);
   projectForm.style.display = "none";
 
   return projectForm;

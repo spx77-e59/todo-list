@@ -5,6 +5,7 @@ export default function () {
   const titleInput = document.createElement("input");
   titleInput.id = "titleInput";
   titleInput.type = "text";
+  titleInput.required = true;
 
   const titleLabel = document.createElement("label");
   titleLabel.for = "titleInput";
@@ -28,6 +29,10 @@ export default function () {
   const dueDateInput = document.createElement("input");
   dueDateInput.id = "dueDateInput";
   dueDateInput.type = "date";
+  
+  const today = new Date();
+  const minDate = today.toISOString().substring(0, 10);
+  dueDateInput.setAttribute("min", minDate);
 
   const dueDateLabel = document.createElement("label");
   dueDateLabel.htmlFor = "dueDateInput";
