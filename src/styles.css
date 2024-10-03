@@ -124,7 +124,7 @@ nav button:hover {
 
 .createTodoDiv input,
 .createTodoDiv textarea {
-  padding: 5px;
+  padding: 10px;
   width: clamp(300px, 500px, 700px);
   border: none;
   background-color: rgba(128, 128, 128, 0.2);
@@ -355,18 +355,35 @@ nav button:hover {
 
 .newProjectButton,
 .closeProjectFormButton {
-  padding: 8px 16px;
+  padding: 10px 20px;
+  color: white;
+  background-color: #5ab2ff;
+  font-size: 1.2rem;
   border: none;
-  border-radius: 5px;
-  box-shadow: 1px 1px 2px gray;
+  box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.8);
+  transition: background-color 0.15s ease;
   align-self: flex-end;
+}
+.newProjectButton {
+  border-radius: 8px;
+  background-color: #5ab2ff;
+}
+
+.newProjectButton:hover {
+  background-color: #5ab2ffde;
 }
 
 .closeProjectFormButton {
-  padding: 6px 10px;
+  border-radius: 12px;
+  background-color: gray;
+}
+
+.closeProjectFormButton:hover {
+  background-color: rgba(128, 128, 128, 0.9);
 }
 
 #projectListDiv {
+  margin-top: 30px;
   display: flex;
   gap: 20px;
 }
@@ -390,11 +407,29 @@ nav button:hover {
 }
 
 .projectDiv button {
-  padding: 5px 10px;
+  padding: 8px 20px;
+  text-wrap: nowrap;
   border: none;
   border-radius: 5px;
-  box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.5);
-  text-wrap: nowrap;
+  box-shadow: 2px 2px 3px rgba(128, 128, 128, 0.8);
+  color: white;
+  transition: background-color 0.15s ease;
+}
+
+.projectDiv button:last-child {
+  background-color: #55679c;
+}
+
+.projectDiv button:last-child:hover {
+  background-color: #55679cd7;
+}
+
+.projectDiv button:nth-last-child(2) {
+  background-color: #ed9455;
+}
+
+.projectDiv button:nth-last-child(2):hover {
+  background-color: #ed9455d0;
 }
 
 /* project form */
@@ -404,17 +439,37 @@ nav button:hover {
   gap: 10px;
   width: 100%;
   justify-content: flex-end;
+  padding: 20px;
+  border-radius: 5px;
+  background-color:  #f0eaac;
+  box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.2);
 }
 
 #projectForm input {
-  padding: 5px;
+  padding: 10px;
+  border: none;
+  background-color: rgba(128, 128, 128, 0.2);
+  border-radius: 5px;
+}
+
+#projectForm input:focus {
+  outline: none;
+  border: 1px solid gray;
 }
 
 #projectForm button {
-  padding: 5px 10px;
-  border-radius: 5px;
+  background-color: #347928;
+  padding: 10px 24px;
+  color: white;
+  font-size: 1.2rem;
   border: none;
-  box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.5);
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.8);
+  transition: background-color 0.15s ease;
+}
+
+#projectForm button:hover {
+  background-color: #438348;
 }
 
 /* todoDetail */
