@@ -17,6 +17,7 @@ body {
   max-width: 100vw;
   line-height: 1.5rem;
   align-items: center;
+  background-color: #F4DEB3;
 }
 
 button {
@@ -33,30 +34,49 @@ header {
   flex-direction: column;
   gap: 10px;
   padding: 20px;
-  background-color: palevioletred;
+  background-color: #FF8A8A;
   width: 100vw;
   align-items: center;
   box-shadow: 1px 1px 2px gray;
 }
 
 #titleText {
-  font-weight: 900;
+  font-size: 3rem;
+  font-weight: bolder;
   text-shadow: 3px 3px gray;
   color: black;
+  padding: 20px;
+  border-bottom: 6px solid black;
 }
 nav {
   padding: 10px;
   display: flex;
-  gap: 5px;
+  gap: 30px;
 }
 
 nav button {
-  padding: 6px 12px;
+  padding: 16px 40px;
   border: none;
-  border-radius: 5px;
-  box-shadow: 1px 1px 2px gray;
+  font-size: 1.2rem;
+  border-radius: 10px;
   font-weight: 600;
+  background-color: #04bfbf8f;
+  color: rgba(255, 255, 255, 0.9);
 }
+
+.activeState {
+  background-color: #00c2c2;
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 5px 5px 7px rgba(128, 128, 128, 0.8);
+}
+
+nav button:hover {
+  background-color: #00c2c2a6;
+  color: white;
+  box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.5);
+
+}
+
 
 /* content-div */
 
@@ -150,6 +170,7 @@ nav button {
   gap: 10px;
   border-radius: 5px;
   box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.5);
+  background-color: #F0EAAC;
 }
 
 .homeProjectHeaderDiv {
@@ -227,23 +248,23 @@ nav button {
 
 /* priority color */
 .lowPriority {
-  background-color: green;
+  background-color: #69c440;
 }
 
 .mediumPriority {
-  background-color: yellow;
+  background-color: #f1dc32;
 }
 
 .highPriority {
-  background-color: orange;
+  background-color: #ff9323;
 }
 
 .veryHighPriority {
-  background-color: pink;
+  background-color: #da0808;
 }
 
 .urgentPriority {
-  background-color: red;
+  background-color: #950404;
 }
 
 /* checked or completed todo */
@@ -289,10 +310,15 @@ nav button {
 
 .projectDiv {
   border: 1px solid black;
-  padding: 10px 20px;
+  padding: 15px 30px;
   display: flex;
+  flex-wrap: nowrap;
   gap: 10px;
   align-items: center;
+  background-color: #CCE0AC;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.5);
 }
 
 .projectDiv h1 {
@@ -333,6 +359,7 @@ nav button {
   display: flex;
   flex-direction: column;
   gap: 10px;
+
 }
 
 .backToHomeButton {
@@ -369,6 +396,7 @@ nav button {
   border-radius: 5px;
   border: none;
   box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.5);
+  background-color: #F0EAAC;
 }
 
 .viewTodoDiv:last-child {
@@ -394,3 +422,5 @@ nav button {
   font-size: 1.2rem;
   font-weight: 600;
 }
+
+
