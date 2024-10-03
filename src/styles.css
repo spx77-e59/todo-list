@@ -186,7 +186,7 @@ nav button:hover {
 #homeProjectsDiv {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 50px;
   align-items: center;
   justify-content: center;
 }
@@ -384,7 +384,7 @@ nav button:hover {
 #projectListDiv {
   margin-top: 30px;
   display: flex;
-  gap: 20px;
+  gap: 40px;
 }
 
 .projectDiv {
@@ -394,7 +394,7 @@ nav button:hover {
   flex-wrap: nowrap;
   gap: 10px;
   align-items: center;
-  background-color: #cce0ac;
+  background-color: #f0eaac;
   border: none;
   border-radius: 5px;
   box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.5);
@@ -406,17 +406,29 @@ nav button:hover {
 }
 
 .projectDiv button {
-  padding: 8px 20px;
   text-wrap: nowrap;
   border: none;
-  border-radius: 5px;
   box-shadow: 2px 2px 3px rgba(128, 128, 128, 0.8);
   color: white;
   transition: background-color 0.15s ease;
 }
 
+.cancelEditTitleButton {
+  margin-right: 40px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background-color: gray;
+  transition: background-color 0.15s ease;
+}
+
+.cancelEditTitleButton:hover {
+  background-color: rgba(128, 128, 128, 0.9);
+}
+
 .projectDiv button:last-child {
   background-color: #55679c;
+  padding: 8px 20px;
+  border-radius: 5px;
 }
 
 .projectDiv button:last-child:hover {
@@ -425,6 +437,8 @@ nav button:hover {
 
 .projectDiv button:nth-last-child(2) {
   background-color: #ed9455;
+  padding: 8px 20px;
+  border-radius: 5px;
 }
 
 .projectDiv button:nth-last-child(2):hover {
@@ -438,14 +452,10 @@ nav button:hover {
   gap: 10px;
   width: 100%;
   justify-content: flex-end;
-  padding: 20px;
-  border-radius: 5px;
-  background-color: #f0eaac;
-  box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.2);
 }
 
 #projectForm input {
-  padding: 10px;
+  padding: 5px;
   border: none;
   background-color: rgba(128, 128, 128, 0.2);
   border-radius: 5px;
@@ -458,7 +468,7 @@ nav button:hover {
 
 #projectForm button {
   background-color: #347928;
-  padding: 10px 24px;
+  padding: 8px 20px;
   color: white;
   font-size: 1.2rem;
   border: none;
