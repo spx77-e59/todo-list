@@ -56,6 +56,7 @@ export default function () {
   priorityOptions.forEach((option) => {
     const optionElement = document.createElement("option");
     optionElement.value = option.value;
+    optionElement.style.backgroundColor = "#f0eaac";
     optionElement.textContent = option.text;
     priorityInput.appendChild(optionElement);
   });
