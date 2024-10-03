@@ -5,7 +5,6 @@ import generateUniqueID from "../functions/generateUniqueID.js";
 
 export default function (event, form, storage) {
   event.preventDefault();
-  console.log(form.projectTitleInput.value);
   const formData = {
     id: generateUniqueID(),
     title: form.projectTitleInput.value,

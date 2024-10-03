@@ -1,11 +1,12 @@
-import retrieveDataFromLocalStorage from "../functions/retrieveDataFromLocalStorage";
-import newTodoForm from "../forms/newTodoForm";
-import showTodo from "./showTodo";
-import Storage from "../classes/Storage";
-import saveToLocalStorage from "../functions/saveToLocalStorage";
-import updateProject from "../functions/updateProject";
-import updateTodoChecked from "../functions/updateTodoChecked";
-import updateTodoUnchecked from "../functions/updateTodoUnchecked";
+import retrieveDataFromLocalStorage from "../functions/retrieveDataFromLocalStorage.js";
+import newTodoForm from "../forms/newTodoForm.js";
+import showTodo from "./showTodo.js";
+import Storage from "../classes/Storage.js";
+import saveToLocalStorage from "../functions/saveToLocalStorage.js";
+import updateProject from "../functions/updateProject.js";
+import updateTodoChecked from "../functions/updateTodoChecked.js";
+import updateTodoUnchecked from "../functions/updateTodoUnchecked.js";
+import setPriorityClassName from "../functions/setPriorityClassName.js";
 
 export default function showProjectsAndList() {
   const contentDiv = document.querySelector("#content");
@@ -67,7 +68,7 @@ export default function showProjectsAndList() {
 
       const checkedInput = document.createElement("input");
       checkedInput.type = "checkbox";
-      checkedInput.checked = todo.checked;
+      checkedInput.checked = todo.checked; 
 
       checkedInput.addEventListener("change", () => {
         if (checkedInput.checked) {
@@ -79,7 +80,6 @@ export default function showProjectsAndList() {
           todoDiv.classList.remove("complete");
           updateTodoUnchecked(project, todo);
         }
-        console.log(todoDiv.classList);
         updateProject(Storage, project);
         saveToLocalStorage(Storage);
         showProjectsAndList();
@@ -93,11 +93,19 @@ export default function showProjectsAndList() {
 
       const todoDiv = document.createElement("div");
       todoDiv.classList.add("homeTodoDiv");
+      todoDiv.classList.add("helper");
+
       if (todo.checked) {
         todoDiv.classList.add("complete");
+        todoDiv.classList.remove("helper");
       } else {
+        todoDiv.classList.add("helper");
         todoDiv.classList.remove("complete");
       }
+
+      const priorityValue = todo.priority;
+      setPriorityClassName(todoDiv, priorityValue);
+
       todoDiv.append(titleText, dueDateText, checkedInput, viewDetailButton);
       todoListDiv.append(todoDiv);
     });

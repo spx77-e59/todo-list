@@ -23,6 +23,10 @@ button {
   cursor: pointer;
 }
 
+h1, h2, h3, p {
+  color: rgba(0, 0, 0, 0.8);
+}
+
 /* header */
 header {
   display: flex;
@@ -221,17 +225,40 @@ nav button {
   background-color: green;
 }
 
+/* priority color */
+.lowPriority {
+  background-color: green;
+}
+
+.mediumPriority {
+  background-color: yellow;
+}
+
+.highPriority {
+  background-color: orange;
+}
+
+.veryHighPriority {
+  background-color: pink;
+}
+
+.urgentPriority {
+  background-color: red;
+}
+
+/* checked or completed todo */
+.complete {
+  background-color: rgb(165, 137, 137);
+}
+
 .checked,
 .unchecked {
   cursor: default;
 }
 
-.complete {
-  background-color: rgb(175, 94, 94);
-}
-
 .complete h2, .complete p {
   text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 /* projects */
